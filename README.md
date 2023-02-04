@@ -1,7 +1,7 @@
 # HackSC_Project
 
 # Run this command in your terminal
-## pip install chatgptpy --upgrade
+##  pip install openai   
 
 ### I don't want us to exceed the amount of log ins we can make with chatgpt api so for now I will open 
 ### a chat and log the conversations to a separate file
