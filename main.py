@@ -1,43 +1,47 @@
-
-
 import os
 import openai
-import mysql.connector
+import json
 
-cnx = mysql.connector.connect(user='admin', password='password',
-host='mydb.cojn5ewfdu5p.us-west-1.rds.amazonaws.com', database='Poker_Venmo_Integreation')
-cursor = cnx.cursor()
+with open('sample.json') as json_file:
+    dic = json.load(json_file)
+ 
+    # Print the type of data variable
+    # print("Type:", type(dic))
+
+titles = list(dic.keys())
+first_sum = dic[titles[0]]
+first_sum = first_sum.replace('\n', ' ')
+# print(first_sum)
 
 openai.api_key = "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"
 
 model_engine = "text-davinci-003"
-prompt="What is the current news on the Kyrie Irving Trade in 30 words or less in 2023"
+prompt="Summarize this in 150 words:\n\n" + first_sum
 
 # Generate a response
 completion = openai.Completion.create(
     engine=model_engine,
     prompt=prompt,
     max_tokens=1024,
-    n=1,
+    top_p = 1.0,
+    frequency_penalty = 0.0,
+    presence_penalty = 0.0,
     stop=None,
-    temperature=0.01, # higher values correspond to corr with crazier responses
+    temperature=0.7, # higher values correspond to corr with crazier responses
 )
 
-print(completion)
+# print(completion)
 
 response = completion.choices[0].text
 print(response)
 
-with open("output.txt", "a") as f:
-  print(response, file=f)
+
+with open("openAI.txt", "a") as f:
+  print(prompt + "\n", file = f)  
+  print("Original: \n", file = f)
+  print(first_sum + "\n\n", file = f) 
+  print("OpenAI:\n", file = f)
+  print(response + "\n\n\n\n", file=f)
+  
   
 
-
-# sample query 1
-query = "INSERT INTO `HackSC`.`master` (`idmaster`, `question`, `response`) VALUES ('1', '\"why?\"', '\"because\"');"
-
-# execute query command
-cursor.execute(query)
-
-# sample query 2
-# query = 'DROP TABLE `Poker_Venmo_Integreation`.`todaysTable`'
