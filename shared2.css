@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Share+Tech+Mono&family=Unbounded:wght@500&display=swap');
+
+@font-face {
+	font-family: "Rugen";
+	src: url("font/RugenExpandedPersonalUse.otf");
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+#navbar, #navbar ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#navbar li {
+	background-color: black;
+	/*	
+	600px #main / 4 menu options - 150px per menu
+	*/
+	width: 200px;
+	text-align: center;
+
+	position: relative;
+}
+#navbar {
+	display: flex;
+	justify-content: center;
+	background-color: black;
+
+/*	position: fixed;*/
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+
+	font-family: 'Share Tech Mono', monospace;
+}
+#navbar li:hover{
+	background-color: gray;
+}
+#navbar a {
+	text-decoration: none;
+	color: #FFF;
+	height: 50px;
+	line-height: 50px;
+	display: block;
+}
+#navbar ul {
+	position: absolute;
+	display: none;
+	z-index: 1;
+}
+/* only display child */
+#navbar li:hover > ul {
+	display: block;
+}
+#footer {
+	background-color: black;
+	color: white;
+	text-align: center;
+	height: 50px;
+	font-size: 0.8em;
+	line-height: 50px;
+	width: 100%;
+}
