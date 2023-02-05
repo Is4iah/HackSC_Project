@@ -19,6 +19,7 @@ print(article["title"])
 dic = {}
 # print(type(resp.json()["articles"][0]['title']))
 
+
 for article in resp.json()["articles"]:
     dic[article["title"]] = article["summary"]
 
@@ -29,6 +30,6 @@ with open("output2.txt", "a") as f:
         print(str(cnt) + ": "+ dic[title], file = f)
         cnt += 1
     
+with open('file.json', 'w') as file:
+    file.write(json.dumps(dic)) # use `json.loads` to do the reverse
     
-with open("sample.json", "w") as outfile:
-    json.dump(dic, outfile)
