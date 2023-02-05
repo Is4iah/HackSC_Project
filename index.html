@@ -10,6 +10,7 @@
 	<!-- Boostrap -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+	<script src="myscripts.js"></script>
 
 
 	<title>inform.ai</title>
@@ -24,7 +25,6 @@
 			text-align: center;
 		}
 		#header h1 {
-			line-height: 500px;
 			font-family: 'Share Tech Mono', monospace;
 			font-size: 1.5em;
 			text-shadow: 2px 2px #000;
@@ -40,6 +40,8 @@
 			width: 360px;
 			height: 640px;
 			z-index: 2;
+
+			font-family: Times New Roman, sans-serif;
 		}
 		.carousel-item {
 			height: 100%;
@@ -51,6 +53,11 @@
 		.carousel-fade .carousel-item, .carousel-item img  {
 		  max-height: 78vh;
 		  clip-path: inset(0px 0px 40px 0px round 50px);
+/*		  background-position: center;*/
+		}
+		#olivia {
+			margin-left: 100px;
+			overflow: hidden;
 		}
 		.caption2 {
 			background-color: black;
@@ -68,6 +75,10 @@
 			overflow: auto;
 			text-align: center;
 			z-index: 3;
+			font-size: .9em;
+		}
+		.scrollspy h4 {
+			text-orientation: wrap;
 		}
 		.scrollspy p{
 			text-align: left;
@@ -79,7 +90,7 @@
 		#buttonbig {
 			position: relative;
 			top: -100px;
-			font-size: 1.2em;
+			font-size: 1.3em;
 		}
 		#overlay {
 			height: 110%;
@@ -95,30 +106,127 @@
 			font-family: "Rugen", fantasy;
 			text-shadow: 2px 2px #000;
 		}
+		#inform {
+			margin-top: -10px;
+			width: 300px;
+			height: auto;
+			
+		}
+		#about {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: 50px;
+		}
+		#abouttext {
+			margin-top: 50px;
+			font-family: "Rugen", fantasy;
+			font-size: 2em;
+			text-align: center;
+		}
+		.accordion {
+			/*margin-left: 15%;
+			margin-right: 15%;*/
+			width: 80%;
+		}
+		#carousel2 img {
+			margin-left: -300px;
+			margin-top: 15px;
+/*			clip-path: inset(50px 20px 30px 40px);*/
+			overflow: hidden;
+		}
+		.line-1{
+		    position: relative;
+		    top: 250px;
+		    width: 5em;
+		    margin: 0 auto;
+		    border-right: 2px solid rgba(255,255,255,.75);
+		    font-size: 180%;
+		    text-align: center;
+		    white-space: nowrap;
+		    overflow: hidden;
+		    transform: translateY(-50%);    
+		}
+		.anim-typewriter{
+		  animation: typewriter 1s steps(20) 1s 1 normal both,
+		             blinkTextCursor 750ms steps(20) infinite normal;
+		}
+		@keyframes typewriter{
+		  from{width: 0;}
+		  to{width: 5em;}
+		}
+		@keyframes blinkTextCursor{
+		  from{border-right-color: rgba(255,255,255,.75);}
+		  to{border-right-color: transparent;}
+		}
 	</style>
 </head>
 <body>
 	<ul id="navbar">
 		<li>
-			<a id="active-nav" href="index.hhtml">Inform.ai</a>
+			<a id="active-nav" href="index.html">Inform.ai</a>
 			<ul>
-				<li><a href="#instructions">Article 1</a></li>
-				<li><a href="#pre-flop">Article 2</a></li>
-				<li><a href="#post-flop">Article 3</a></li>
-				<li><a href="#river">Article 4</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#demo">Demo</a></li>
 			</ul>
 		</li>
 		<li>
-			<a href="gallery.html">Account</a>
+			<a href="index.html">Account</a>
 			
 		</li>
 
 	</ul> <!-- navbar -->
 
 	<div id="header">
-		<h1 class="typed-out">Inform.ai</h1>
+		<div>
+			<h1 class="line-1 anim-typewriter">Inform.ai</h1>
+		</div>
+		
 	</div>
+	<div id="about">
 
+		<h2 id="abouttext">About</h2>
+		<img id="inform" src="img/inform.png">
+
+		<div class="accordion" id="accordionPanelsStayOpenExample">
+		  <div class="accordion-item">
+		    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+		      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+		        <code>Why did we build inform.ai?</code>
+		      </button>
+		    </h2>
+		    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+		      <div class="accordion-body">
+		        Our inspiration was a mutual feeling of <strong>not being as informed</strong> about the world as we thought we should be. We wondered what stopped us from sitting down and reading the news like our parents did. In an ever-changing and fast-paced world, we realized that our attention spans were simply not as good sas older generations. Therefore, we set out to build an app to help compile the most important news for each day in short-form content like the TikTok and Instagram reels that are extremely popular nowadays.
+		      </div>
+		    </div>
+		  </div>
+		  <div class="accordion-item">
+		    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+		      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+		        <code>What does inform.ai do?</code>
+		      </button>
+		    </h2>
+		    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+		      <div class="accordion-body">
+		        Effectively, we combine TikTok and modern news channels to <strong>create short-form news articles</strong> that can be read in under 2 minutes. These news articles are up to date from the day surrounding current world news and politics. Our aim was to help connect the world better by keeping everyone (even people with short attention spans!) informed about what's happening in our world.
+		      </div>
+		    </div>
+		  </div>
+		  <div class="accordion-item">
+		    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+		      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+		        <code>How did we build inform.ai?</code>
+		      </button>
+		    </h2>
+		    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+		      <div class="accordion-body">
+		        Each day, we <strong>scrape thousands of news channels</strong> using the <em>Perigon API</em> and summarize them using OpenAI. Then we push them to our web server after storing them in a <em>MySQL</em> database. We plan on making this an IOS app after HackSC, but since our members knew better how to make Web Applications, we demoed our product as a web app.
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
 
 	<div id="main">
 		<div id="demo">
@@ -136,22 +244,21 @@
 		      <img src="img/scandal.jpg" class="d-block h-100" alt="...">
 		      <div class="carousel-caption d-none d-md-block">
 	      		<div class="d-grid gap-2">
-	      		  <button id="buttonbig" class="btn btn-primary" type="button">Lori Laughlin Indicited in Big College Scandal</button>
+	      		  <button id="buttonbig" class="btn btn-secondary" type="button">Lori Laughlin Indicted in Massive College Scandal</button>
 	      		</div>
 		      </div>
 		    </div>
 		    <div class="carousel-item">
-		      <img src="img/scandal.jpg" class="d-block h-100" alt="...">
+		      <img id="olivia" src="img/scandal.jpg" class="d-block h-100" alt="...">
 		      <div class="carousel-caption caption2 d-none d-md-block">
 		      	<div class="scrollspy" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
-		      	  <h4 id="scrollspyHeading1">Article Title</h4>
-		      	  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-		      	  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		      	  <h4 id="scrollspyHeading1">Lori Loughlin pays $500K for college tuition of 2 students after admissions scandal</h4>
+		      	  <p>Actress Lori Loughlin has agreed to pay $500,000 in college tuition for two students as part of her sentence for her involvement in the college admissions scandal. This payment is aimed at compensating the education costs for students who were affected by the scandal and is part of Loughlin's effort to rectify the harm caused by her actions. In 2020, Loughlin and her husband, fashion designer Mossimo Giannulli, were among the many wealthy parents charged in the scheme for bribing college officials and committing fraud in order to secure their children's admissions into top universities. Both Loughlin and Giannulli pleaded guilty to the charges and were sentenced to prison time, community service, and fines. The college admissions scandal drew widespread attention and sparked a national conversation about the unequal opportunities and privileges in the college admission process. Loughlin's payment of tuition for the affected students is a step towards restoring justice and fairness in the system.</p>
 		      	</div>
 		      </div>
 		    </div>
-		    <div class="carousel-item">
-		      <img src="img/scandal.jpg" class="d-block h-100" alt="...">
+		    <div id="carousel2"class="carousel-item">
+		      <img src="img/scandal2.png" class="d-block h-100" alt="...">
 		      <div class="carousel-caption d-none d-md-block">
 		        <button id="button3" type="button" class="btn btn-primary">Read More</button>
 		      </div>
@@ -166,8 +273,6 @@
 		    <span class="visually-hidden">Next</span>
 		  </button>
 	</div>
-
-
 
 	<div id="footer">
 		SSQ Software &copy; 2023
